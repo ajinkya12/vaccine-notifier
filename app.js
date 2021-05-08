@@ -1,6 +1,8 @@
 function available() {
-    $.get('https://www.eventsnow.com/hyderabad/srh-ipl-tickets', function(response){
-        var tickets = response.includes('No matches available currently');
+    $.get('https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin',
+    {pincode: 444203, date: '09-05-2021'},
+    function(response){
+        var tickets = response.includes('centers');
         console.log("available :: " + tickets);
         if(tickets) {
           sendMessage();
