@@ -35,7 +35,7 @@ function formatResponse(centers) {
     }
     res['text'] = 'AVAILABLE VACCINE';
     res['icon_emoji'] = ':eyes:';
-
+    res['username'] = 'Vaccine';
     var blocks = [];
     centers.map(center => {
         var sessions = Object.entries(center.sessions);
