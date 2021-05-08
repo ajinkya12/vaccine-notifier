@@ -2,7 +2,7 @@ function available() {
     $.get('https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin',
     {pincode: 444203, date: '09-05-2021'},
     function(response){
-        var tickets = response.includes('centers');
+        var tickets = response['centers'];
         console.log("available :: " + tickets);
         if(tickets) {
           sendMessage();
