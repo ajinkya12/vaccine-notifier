@@ -8,16 +8,17 @@ function available() {
             console.log(center.address)
         })
         console.log("available :: " + centers);
-        if(centers.length > 0) {
-          sendMessage();
-        }
+        sendMessage(centers);
     });
   };
 
-function sendMessage() {
+function sendMessage(centers) {
     var url = "ItyIUcdBtOp2Z2Q3JfrC0DqB/2NF1H14120B/F9NEV435T/secivres/moc.kcals.skooh//:sptth";
     var actual = url.split("").reverse().join("");
-    var text = "<b>Hello Aditi</b>";
+    var text = "AVAILABLE VACCINE";
+    if(centers.length == 0) {
+        text = "NOT available";
+    }
     $.ajax({
         type: 'POST',
         url: actual,
