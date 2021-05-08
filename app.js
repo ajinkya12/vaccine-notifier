@@ -34,6 +34,8 @@ function formatResponse(centers) {
         return res;
     }
     res['text'] = 'AVAILABLE VACCINE';
+    res['icon_emoji'] = ':eyes:';
+
     var blocks = [];
     centers.map(center => {
         var sessions = Object.entries(center.sessions);
@@ -45,7 +47,7 @@ function formatResponse(centers) {
                 block['type'] = 'section';
                 var text = {};
                 text['type'] = 'mrkdwn';
-                text['text'] = '*' + center['name'] + '* - *' + center['address'] + '* doses:' + session['available_capacity'];
+                text['text'] = '*' + center['name'] + '* - *' + center['address'] + '* available doses: ' + session['available_capacity'];
                 block['text'] = text;
 
                 blocks.push(block);
@@ -53,5 +55,6 @@ function formatResponse(centers) {
         })
 
     })
-    return blocks;
+    res['blocks'] = blocks;
+    return res;
 }
