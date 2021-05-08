@@ -17,6 +17,8 @@ function sendMessage(centers) {
     var actual = url.split("").reverse().join("");
 
     var payload = formatResponse(centers);
+    console.log(payload);
+    console.log('Stringify : ' + JSON.stringify(payload));
     $.ajax({
         type: 'POST',
         url: actual,
