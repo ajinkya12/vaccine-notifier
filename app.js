@@ -33,28 +33,23 @@ function formatResponse(centers) {
     }
     res['text'] = 'AVAILABLE VACCINE';
     var blocks = [];
-    for(center in centers) {
+    centers.map(center => {
+        var sessions = Object.entries(center.sessions);
         var sessions = center['sessions'];
-        var min_age_limit = sessions[0]['min_age_limit'];
-        var available_capacity = sessions[0]['available_capacity'];
-        if(min_age_limit >= 18) {
-            var block = {};
-            block['type'] = 'section';
-            var text = {};
-            text['type'] = 'mrkdwn';
-            text['text'] = '*' + center['name'] + '* - *' + center['address'] + '* ';
-            block['text'] = text;
+        sessions.map(session => {
+            var min_age_limit = session['min_age_limit'];
+            if(min_age_limit >= 18) {
+                var block = {};
+                block['type'] = 'section';
+                var text = {};
+                text['type'] = 'mrkdwn';
+                text['text'] = '*' + center['name'] + '* - *' + center['address'] + '* doses:' + session['available_capacity'];
+                block['text'] = text;
 
-            blocks.push(block);
-        }
-    }
+                blocks.push(block);
+            }
+        })
+
+    })
     return blocks;
 }
-/*
-{
-    "type": "section",
-    "text": {
-        "type": "mrkdwn",
-        "text": "*Danny Torrence* left the following review for your property:"
-    }
-*/
