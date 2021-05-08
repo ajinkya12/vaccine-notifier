@@ -29,13 +29,15 @@ function sendMessage(centers) {
 
 function formatResponse(centers) {
     var res = {};
+    res['username'] = 'Vaccine';
+    res['icon_emoji'] = ':eyes:';
+
     if(centers.length == 0) {
-        res['text'] = 'NOT AVAILABLE';
+        res['text'] = 'NOT Available';
         return res;
     }
-    res['text'] = 'AVAILABLE VACCINE';
-    res['icon_emoji'] = ':eyes:';
-    res['username'] = 'Vaccine';
+    res['text'] = 'Available';
+
     var blocks = [];
     centers.map(center => {
         var sessions = Object.entries(center.sessions);
