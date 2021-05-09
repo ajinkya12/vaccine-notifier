@@ -8,6 +8,7 @@ app = express();
 
 const ApiCall = () => {
     CowinAPI.getCenters(444203, '09-05-2021', function(responseObject) {
+        console.log(responseObject.body)
         var body = JSON.parse(responseObject.body);
         var centers = body['centers'];
         var payload = SlackAPI.formatResponse(centers);
@@ -16,7 +17,6 @@ const ApiCall = () => {
 }
 
 ApiCall()
-
 
 // Schedule tasks to be run on the server.
 cron.schedule('* * * * *', function() {
