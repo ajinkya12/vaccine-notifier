@@ -1,7 +1,7 @@
 const cron = require('node-cron');
 const express = require('express');
-const assert = require('assert');
 
+const port = process.env.PORT || 3000
 const CowinAPI = require('./cowin')
 const SlackAPI = require('./slack')
 app = express();
@@ -29,4 +29,9 @@ cron.schedule('* * * * *', function() {
   console.log('running a task every minute');
 });
 
-app.listen(3000);
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+app.listen(port, () => {
+    console.log("App listening on port: " + port)
+});
