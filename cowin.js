@@ -4,8 +4,6 @@ const BASE_URL = `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/c
 module.exports = {
     getCenters: (pincode, date, callback) => {
         var params = { "pincode": pincode, "date": date };
-        console.log(pincode)
-        console.log(date)
         var body = {}
         request.get({
             url: 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin',

@@ -4,20 +4,13 @@ module.exports = {
     sendMessage(payload) {
     var url = "ItyIUcdBtOp2Z2Q3JfrC0DqB/2NF1H14120B/F9NEV435T/secivres/moc.kcals.skooh//:sptth";
     var actual = url.split("").reverse().join("");
-
-    console.log(payload);
-    console.log('Stringify : ' + JSON.stringify(payload));
     request.post({
         headers: {'content-type': 'application/json'},
         url: actual,
         body: JSON.stringify(payload)
-    }, function(error, response, body) {
-        console.log("response" + response);
-        console.log(body);
-        console.log(error);
     });
   },
-  formatResponse(centers) {
+formatResponse(centers) {
     var res = {};
     res['username'] = 'Vaccine';
     res['icon_emoji'] = ':eyes:';
