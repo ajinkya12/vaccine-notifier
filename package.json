@@ -1,27 +1,16 @@
 {
-  "name": "vaccine-notifier",
+  "name": "vaccine-trial",
   "version": "1.0.0",
-  "description": "Vaccination notifier",
-  "main": "app.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ajinkya12/vaccine-notifier.git"
-  },
-  "keywords": [
-    "vaccine",
-    "notifier"
-  ],
-  "author": "Ajinkya",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ajinkya12/vaccine-notifier/issues"
-  },
-  "homepage": "https://github.com/ajinkya12/vaccine-notifier#readme",
   "dependencies": {
-    "webpack": "^5.36.2"
+    "express": "^4.17.1",
+    "node-cron": "^2.0.3",
+    "request": "^2.88.2"
   }
 }
