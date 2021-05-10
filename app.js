@@ -7,9 +7,8 @@ const SlackAPI = require('./slack')
 app = express();
 
 const ApiCall = () => {
-    CowinAPI.getCenters(444203, function(responseObject) {
-        console.log(responseObject.body)
-        var body = JSON.parse(responseObject.body);
+    CowinAPI.getCenters(444203, function(data) {
+        var body = JSON.parse(data);
         var centers = body['centers'];
         var payload = SlackAPI.formatResponse(centers);
         SlackAPI.sendMessage(payload);
