@@ -10,7 +10,7 @@ module.exports = {
         console.log(date)
 
         var options = {
-            host :  'cdn-api.co-vin.in',
+            host :  'd15r24xjniien.cloudfront.net',
             port : 443,
             path : '/api/v2/appointment/sessions/public/calendarByPin?pincode=' + pincode + '&date=' + date,
             method : 'GET'
