@@ -7,7 +7,7 @@ const SlackAPI = require('./slack')
 app = express();
 
 const ApiCall = () => {
-    CowinAPI.getCenters(444203, '09-05-2021', function(responseObject) {
+    CowinAPI.getCenters(444203, function(responseObject) {
         console.log(responseObject.body)
         var body = JSON.parse(responseObject.body);
         var centers = body['centers'];
