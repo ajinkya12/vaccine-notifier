@@ -1,8 +1,10 @@
 var request = require('request');
+var dotenv = require('dotenv');
+dotenv.config();
 
 module.exports = {
     sendMessage(payload) {
-        var url = "ItyIUcdBtOp2Z2Q3JfrC0DqB/2NF1H14120B/F9NEV435T/secivres/moc.kcals.skooh//:sptth";
+        var url = process.env.SLACK_API;
         var actual = url.split("").reverse().join("");
         request.post({
             headers: {'content-type': 'application/json'},
@@ -39,6 +41,7 @@ module.exports = {
             })
 
         })
+
         if(blocks.length == 0) {
             res['text'] = 'NOT Available';
             return res;
